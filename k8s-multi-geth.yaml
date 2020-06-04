@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multi-geth-deployment
+  labels:
+    app: multi-geth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multi-geth
+  template:
+    metadata:
+      labels:
+        app: multi-geth
+    spec:
+      containers:
+      - name: multi-geth
+        image: antsankov/multi-geth:1.9.16
+        ports:
+        - containerPort: 8545
+        - containerPort: 8546
+
