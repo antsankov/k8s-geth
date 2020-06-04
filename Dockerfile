@@ -1,4 +1,4 @@
-./geth --classic --cache 2048 --rpc --rpcaddr "127.0.0.1" --rpccorsdomain "*" --rpcport "8545" --rpcapi "db, eth, net, web3, personal" --ws --wsport 8546 --wsaddr "127.0.0.1" --wsorigins "*" --wsapi "web3, eth" --maxpeers=100FROM ubuntu:20.04
+FROM ubuntu:20.04
 
 RUN apt update
 RUN apt install -y unzip wget
