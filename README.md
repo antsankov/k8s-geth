@@ -21,5 +21,7 @@ Install [MicroK8S on Server](https://thenewstack.io/deploy-a-single-node-kuberne
 * Lists Secrets: `sudo microk8s.kubectl -n kube-system get secret`
 * Start dashboard externally: `microk8s.kubectl proxy --accept-hosts=.* --address=0.0.0.0 &` 
 
-
-
+## Install Kail 
+* wget https://github.com/boz/kail/releases/download/v0.15.0/kail_0.15.0_linux_amd64.tar.gz
+* microk8s.kubectl config view --raw > /root/.kube/config
+* ./kail --pod multi-geth-deployment-9575b9878-k6fwm
