@@ -23,6 +23,20 @@ Install [MicroK8S on Server](https://thenewstack.io/deploy-a-single-node-kuberne
 
 * Nuke everything `microk8s.kubectl delete deployments,jobs,services,pods --all -n default`
 
+## Get it started
+* microk8s.kubectl apply -f pv-volume.yaml
+* microk8s.kubectl apply -f pv-claim.yaml
+* microk8s.kubectl apply -f k8s-multi-geth.yaml
+* microk8s.kubectl apply -f k8s-multi-geth.yaml
+
+## Useful 
+* `microk8s.kubectl port-forward multi-geth-deployment-57dcf8c8b7-rhxmr 8545:8545`
+* `microk8s.kubectl exec -it  multi-geth-deployment-57dcf8c8b7-rhxmr  -- /bin/bash`
+
+## Test
+* `curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":67}' http://localhost:8545`
+
+
 ## Install Kail 
 * wget https://github.com/boz/kail/releases/download/v0.15.0/kail_0.15.0_linux_amd64.tar.gz
 * microk8s.kubectl config view --raw > /root/.kube/config

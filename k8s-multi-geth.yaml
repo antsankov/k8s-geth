@@ -19,12 +19,15 @@ spec:
         image: antsankov/multi-geth:1.9.16
         ports:
         - containerPort: 8545
+          hostPort: 8545
         - containerPort: 8546
+          hostPort: 8546
         volumeMounts:
-        - name: geth-storage
+        - name: "task-pv-storage"
           mountPath: /data/geth
       volumes:
-      - name: geth-storage
-        emptyDir: {}
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: task-pv-claim
 
 
