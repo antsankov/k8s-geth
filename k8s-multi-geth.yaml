@@ -20,4 +20,11 @@ spec:
         ports:
         - containerPort: 8545
         - containerPort: 8546
+        volumeMounts:
+        - name: geth-storage
+          mountPath: /data/geth
+      volumes:
+      - name: geth-storage
+        emptyDir: {}
+
 
