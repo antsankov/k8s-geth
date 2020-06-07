@@ -14,6 +14,7 @@ spec:
       labels:
         app: multi-geth
     spec:
+      hostNetwork: true
       containers:
       - name: multi-geth
         image: antsankov/multi-geth:1.9.16
