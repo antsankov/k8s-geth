@@ -6,6 +6,10 @@
 Docker run creates a new container for that task. 
 Docker start launches a persistant container.
 
+* `docker login` to login to dockerhub
+and 
+* `docker push antsankov/multi-geth:1.9.16` to actually push up the image.
+
 * `watch du -h ~/.ethereum` to monitor disk usage. 
 
 ## K8S Notes
@@ -27,8 +31,8 @@ Install [MicroK8S on Server](https://thenewstack.io/deploy-a-single-node-kuberne
 * microk8s.kubectl apply -f pv-volume.yaml
 * microk8s.kubectl apply -f pv-claim.yaml
 * microk8s.kubectl apply -f k8s-multi-geth.yaml
-* microk8s.kubectl apply -f k8s-multi-geth.yaml
-
+- This will write to the host file system under /mnt/data/geth
+- 
 ## Useful 
 * `microk8s.kubectl port-forward multi-geth-deployment-57dcf8c8b7-rhxmr 8545:8545`
 * `microk8s.kubectl exec -it  multi-geth-deployment-57dcf8c8b7-rhxmr  -- /bin/bash`

@@ -1,8 +1,0 @@
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: geth-ingress
-spec:
-  backend:
-    serviceName: multi-geth-deployment
-    servicePort: 8545
