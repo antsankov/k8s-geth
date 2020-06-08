@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  nginx.conf: |
+  events {
+    worker_connections  4096;  ## Default: 1024
+  }
+  http {
+    server {
+      listen 80;
+      listen [::]:80;
+
+      server_name test;
+
+      location / {
+        proxy_pass http://localhost:8545/;
+        proxy_set_header Host $host;
+      }
+    }
+  }
+
