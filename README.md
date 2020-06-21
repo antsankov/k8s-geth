@@ -31,6 +31,8 @@ Install [MicroK8S on Server](https://thenewstack.io/deploy-a-single-node-kuberne
 * microk8s.kubectl apply -f pv-volume.yaml
 * microk8s.kubectl apply -f pv-claim.yaml
 * microk8s.kubectl apply -f k8s-multi-geth.yaml
+* microk8s.kubectl apply -f nginx-deployment.yaml
+* microk8s.kubectl apply -f nginx-conf.yaml
 - This will write to the host file system under /mnt/data/geth
 - 
 ## Useful 
